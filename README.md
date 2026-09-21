@@ -20,9 +20,8 @@ Demonstrar domínio prático de SQL aplicado a problemas de negócio, incluindo:
 sql_business_portfolio/
 ├── README.md
 ├── schema.sql
-├── seed.sql
+├── sample_data.sql
 ├── business_questions.sql
-├── ecommerce_sample.db
 ├── RESULTS.md
 └── .gitignore
 ```
@@ -56,36 +55,22 @@ As respostas SQL estão em `business_questions.sql`.
 
 ## Como executar
 
-### Opção 1 — usar a base pronta
-
-```bash
-sqlite3 ecommerce_sample.db
-```
-
-Dentro do SQLite:
-
-```sql
-.read business_questions.sql
-```
-
-### Opção 2 — recriar a base
+### Recriar e consultar a base
 
 ```bash
 sqlite3 ecommerce_sample.db < schema.sql
-sqlite3 ecommerce_sample.db < seed.sql
+sqlite3 ecommerce_sample.db < sample_data.sql
 sqlite3 ecommerce_sample.db < business_questions.sql
 ```
 
+O arquivo `sample_data.sql` gera de forma reproduzível 200 clientes, 40 produtos e 1.200 pedidos para análise.
+
 ## Resultados
 
-Uma prévia das saídas validadas está em `RESULTS.md`.
+As consultas foram validadas na base amostral gerada, e uma prévia das saídas está em `RESULTS.md`.
 
 ## Tecnologias
 
 - SQL
 - SQLite
 - Git/GitHub
-
-## Sugestão de descrição para o GitHub
-
-> Projeto de análise de dados em SQL com uma base amostral de e-commerce. Contém modelagem relacional e 10 consultas orientadas a perguntas reais de negócio, cobrindo faturamento, ticket médio, recorrência, margem, canais de venda, pagamentos e estoque.
